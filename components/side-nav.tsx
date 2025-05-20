@@ -144,8 +144,8 @@ export function SideNav() {
                 className="w-full border-[#334155] text-white hover:bg-[#1e293b]"
                 onClick={handleAddFromLibrary}
               >
-                <span className="mr-2">+</span>
-                Add from Library
+                <span className="mr-2 text-orange-400">+</span>
+                <span className="text-orange-400 font-medium">Add from Library</span>
               </Button>
             </div>
           </div>
@@ -177,28 +177,28 @@ export function SideNav() {
               <div className="space-y-4">
                 <Button
                   variant="outline"
-                  className="w-full border-[#334155] text-white hover:bg-[#1e293b] justify-start"
+                  className="w-full border-[#334155] bg-gradient-to-r from-orange-500/10 to-transparent text-orange-400 hover:bg-[#1e293b] justify-start font-medium"
                   onClick={() => togglePanel("player")}
                 >
-                  <Circle className="mr-2 h-5 w-5 text-green-500" />
+                  <Circle className="mr-2 h-5 w-5 text-orange-500" />
                   Player
                 </Button>
 
                 <Button
                   variant="outline"
-                  className="w-full border-[#334155] text-white hover:bg-[#1e293b] justify-start"
+                  className="w-full border-[#334155] bg-gradient-to-r from-blue-500/10 to-transparent text-blue-400 hover:bg-[#1e293b] justify-start font-medium"
                   onClick={() => togglePanel("tactic")}
                 >
-                  <ArrowRight className="mr-2 h-5 w-5 text-green-500" />
+                  <ArrowRight className="mr-2 h-5 w-5 text-blue-500" />
                   Tactic
                 </Button>
 
                 <Button
                   variant="outline"
-                  className="w-full border-[#334155] text-white hover:bg-[#1e293b] justify-start"
+                  className="w-full border-[#334155] bg-gradient-to-r from-purple-500/10 to-transparent text-purple-400 hover:bg-[#1e293b] justify-start font-medium"
                   onClick={() => togglePanel("action")}
                 >
-                  <ZoomIn className="mr-2 h-5 w-5 text-green-500" />
+                  <ZoomIn className="mr-2 h-5 w-5 text-purple-500" />
                   Action
                 </Button>
               </div>
@@ -296,7 +296,7 @@ export function SideNav() {
             </div>
 
             <div className="space-y-6">
-              <Button variant="outline" className="w-full border-[#334155] text-white hover:bg-[#1e293b]">
+              <Button variant="outline" className="w-full border-[#334155] bg-gradient-to-r from-red-500/10 to-transparent text-red-400 hover:bg-[#1e293b] font-medium">
                 Delete All
               </Button>
 

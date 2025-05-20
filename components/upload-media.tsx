@@ -96,12 +96,15 @@ export function UploadMedia() {
             </p>
             <div className="flex gap-4">
               <Button
-                className="bg-green-700 hover:bg-green-800 text-white"
+                className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium shadow-md transition-all duration-200 hover:scale-105"
                 onClick={() => document.getElementById("file-upload")?.click()}
               >
                 Browse Files
               </Button>
-              <Button variant="outline" className="border-gray-700 text-white hover:bg-gray-800">
+              <Button 
+                variant="outline" 
+                className="border-purple-700 text-purple-400 hover:bg-purple-900/20 hover:text-purple-300 hover:border-purple-600 font-medium transition-all duration-200 hover:scale-105"
+              >
                 Record Video
               </Button>
             </div>

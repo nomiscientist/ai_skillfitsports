@@ -57,7 +57,7 @@ export function LoginForm({ onLogin, isLoggingIn = false }: LoginFormProps) {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email" className="text-cyan-400 font-medium">Email</Label>
             <Input
               id="email"
               type="email"
@@ -71,7 +71,7 @@ export function LoginForm({ onLogin, isLoggingIn = false }: LoginFormProps) {
 
           <div className="space-y-2">
             <div className="flex justify-between items-center">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password" className="text-cyan-400 font-medium">Password</Label>
               <Link href="#" className="text-sm text-green-600 hover:underline">
                 Forgot password?
               </Link>
@@ -91,7 +91,7 @@ export function LoginForm({ onLogin, isLoggingIn = false }: LoginFormProps) {
             <Checkbox id="remember" />
             <label
               htmlFor="remember"
-              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              className="text-sm font-medium leading-none text-cyan-400 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
             >
               Remember me
             </label>

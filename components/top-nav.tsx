@@ -59,8 +59,8 @@ export function TopNav({ projectName }: TopNavProps) {
       <div className="flex items-center gap-4">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
-              <Globe className="h-5 w-5 mr-1" />
+            <Button variant="ghost" size="sm" className="text-gray-400 hover:text-cyan-300 hover:bg-cyan-900/20 transition-colors">
+              <Globe className="h-5 w-5 mr-1 text-cyan-500" />
               <span className="hidden sm:inline">{currentLanguage}</span>
             </Button>
           </DropdownMenuTrigger>
@@ -69,8 +69,8 @@ export function TopNav({ projectName }: TopNavProps) {
               <DropdownMenuItem
                 key={language.code}
                 onClick={() => handleLanguageChange(language.name)}
-                className={`hover:bg-[#1e293b] cursor-pointer ${
-                  currentLanguage === language.name ? "text-green-600" : ""
+                className={`hover:bg-cyan-900/30 hover:text-cyan-300 cursor-pointer ${
+                  currentLanguage === language.name ? "text-cyan-400 font-medium" : ""
                 }`}
               >
                 {language.name}
@@ -83,7 +83,7 @@ export function TopNav({ projectName }: TopNavProps) {
           <Button
             variant="outline"
             size="sm"
-            className="border-[#334155] text-white hover:bg-[#1e293b]"
+            className="border-orange-800 text-orange-400 hover:bg-orange-900/20 hover:text-orange-300 hover:border-orange-700"
             onClick={() => setShowExportSettings(!showExportSettings)}
           >
             Export

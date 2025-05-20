@@ -61,8 +61,8 @@ export function WorkspaceProjects() {
             variant={activeTab === "media" ? "default" : "outline"}
             className={`rounded-r-none ${
               activeTab === "media"
-                ? "bg-green-500 hover:bg-green-600"
-                : "border-[#334155] text-white hover:bg-[#1e293b]"
+                ? "bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white shadow-md"
+                : "border-[#334155] text-indigo-400 hover:bg-[#1e293b] hover:text-indigo-300"
             }`}
             onClick={() => setActiveTab("media")}
           >
@@ -73,8 +73,8 @@ export function WorkspaceProjects() {
             variant={activeTab === "projects" ? "default" : "outline"}
             className={`rounded-l-none ${
               activeTab === "projects"
-                ? "bg-green-500 hover:bg-green-600"
-                : "border-[#334155] text-white hover:bg-[#1e293b]"
+                ? "bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white shadow-md"
+                : "border-[#334155] text-amber-400 hover:bg-[#1e293b] hover:text-amber-300"
             }`}
             onClick={() => setActiveTab("projects")}
           >

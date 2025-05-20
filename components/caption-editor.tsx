@@ -11,7 +11,7 @@ export function CaptionEditor() {
       <div className="flex flex-1">
         <div className="w-[350px] border-r border-[#1e293b] bg-[#111827] p-4">
           <div className="space-y-6">
-            <Button variant="outline" className="w-full border-[#334155] text-white hover:bg-[#1e293b]">
+            <Button variant="outline" className="w-full border-red-800 text-red-400 hover:bg-red-900/20 hover:text-red-300 font-medium transition-all duration-200">
               Delete All
             </Button>
 
