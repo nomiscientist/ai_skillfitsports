@@ -23,7 +23,7 @@ import { cn } from "@/lib/utils"
 import { UploadMediaDialog } from "./upload-media-dialog"
 import { MediaLibraryDialog } from "./media-library-dialog"
 
-export function SideNav() {
+export function SideNav({ onVideoUpload }: { onVideoUpload?: (file: File) => void }) {
   const [activeSection, setActiveSection] = useState<"media" | "create" | "story" | null>(null)
   const [activePanel, setActivePanel] = useState<string | null>(null)
   const [showUploadDialog, setShowUploadDialog] = useState(false)
@@ -44,7 +44,29 @@ export function SideNav() {
   }
 
   const handleUploadMedia = () => {
-    setShowUploadDialog(true)
+    // Create a hidden file input element
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = 'video/*';
+    fileInput.style.display = 'none';
+    
+    // Handle file selection
+    fileInput.onchange = (e: Event) => {
+      const target = e.target as HTMLInputElement;
+      if (target.files && target.files.length > 0) {
+        const file = target.files[0];
+        // If parent component provided an upload handler, call it
+        if (onVideoUpload) {
+          onVideoUpload(file);
+        }
+        // Don't show the dialog here, let the parent component control it
+      }
+    };
+    
+    // Trigger file selection dialog
+    document.body.appendChild(fileInput);
+    fileInput.click();
+    document.body.removeChild(fileInput);
   }
 
   const handleAddFromLibrary = () => {
@@ -129,23 +151,28 @@ export function SideNav() {
             </div>
 
             <div className="space-y-4">
-              <Button className="w-full bg-green-500 hover:bg-green-600" onClick={handleUploadMedia}>
+              <Button 
+                className="w-full bg-green-500 hover:bg-green-600 text-white font-medium shadow-md transition-all duration-200 hover:scale-105" 
+                onClick={handleUploadMedia}
+              >
                 <Upload className="mr-2 h-4 w-4" />
                 Upload Media
               </Button>
 
-              <Button className="w-full bg-green-500 hover:bg-green-600">
+              <Button 
+                className="w-full bg-green-500 hover:bg-green-600 text-white font-medium shadow-md transition-all duration-200 hover:scale-105"
+              >
                 <User className="mr-2 h-4 w-4" />
                 Upload Player Cover
               </Button>
 
               <Button
                 variant="outline"
-                className="w-full border-[#334155] text-white hover:bg-[#1e293b]"
+                className="w-full border-[#334155] bg-white text-orange-500 hover:bg-white/90 hover:text-orange-600 font-medium transition-all duration-200 hover:scale-105"
                 onClick={handleAddFromLibrary}
               >
-                <span className="mr-2 text-orange-400">+</span>
-                <span className="text-orange-400 font-medium">Add from Library</span>
+                <span className="mr-2 text-orange-500">+</span>
+                <span className="font-medium">Add from Library</span>
               </Button>
             </div>
           </div>
